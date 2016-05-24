@@ -1,0 +1,33 @@
+@font-face {
+  font-family: 'Acrom';
+  font-weight: bold;
+  font-style: normal;
+
+  src: url('../fonts/acrom-bold.eot');
+  src: url('../fonts/acrom-bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/acrom-bold.woff') format('woff'),
+  url('../fonts/acrom-bold.ttf') format('truetype'),
+  url('../fonts/acrom-bold.svg#acrombold') format('svg');
+}
+@font-face {
+  font-family: 'Acrom';
+  font-weight: 300;
+  font-style: normal;
+
+  src: url('../fonts/acrom-light.eot');
+  src: url('../fonts/acrom-light.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/acrom-light.woff') format('woff'),
+  url('../fonts/acrom-light.ttf') format('truetype'),
+  url('../fonts/acrom-light.svg#acromlight') format('svg');
+}
+@font-face {
+  font-family: 'Acrom';
+  font-weight: normal;
+  font-style: normal;
+
+  src: url('../fonts/acrom-regular.eot');
+  src: url('../fonts/acrom-regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/acrom-regular.woff') format('woff'),
+  url('../fonts/acrom-regular.ttf') format('truetype'),
+  url('../fonts/acrom-regular.svg#acromregular') format('svg');
+}
