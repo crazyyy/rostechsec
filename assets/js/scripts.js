@@ -22,3 +22,17 @@ if (typeof jQuery == 'undefined') {
 }
 // Place any jQuery/helper plugins in here.
 
+$(document).ready(function() {
+  $('.header-callback__button').click(function(event) {
+    $('.vmodal-bg').fadeIn('400');
+    $('body').addClass('modaled');
+  });
+  $('.vmodal .close').click(function(event) {
+    $('.vmodal-bg').fadeOut('400');
+    $('body').removeClass('modaled');
+  });
+  $('.vmodal-bg').click(function(event) {
+    $('.vmodal-bg').fadeOut('400');
+    $('body').removeClass('modaled');
+  });
+});

@@ -36,6 +36,23 @@
 
 </footer><!-- /footer -->
 
+<div class="vmodal-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 col-md-offset-8 vmodal">
+        <h6>Обратный звонок</h6>
+        <form action="">
+          <input type="text" placeholder="Ваше имя">
+          <input type="text" placeholder="+7 (___)___-__-__">
+          <textarea placeholder="Коментарий"></textarea>
+          <button>ОСТАВИТЬ ЗАЯВКУ</button>
+        </form>
+        <span class="close"></span>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div><!-- vmodal-bg -->
+
   <?php wp_footer(); ?>
 
 </body>
