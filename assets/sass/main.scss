@@ -598,6 +598,85 @@ article {
         }
       }
     }
+    .gallery {
+      .gallery-item {
+        margin: 0 0 10px !important;
+        padding: 0 10px;
+
+        opacity: .9;
+        &:hover {
+          opacity: 1;
+        }
+        img {
+          margin: 0;
+        }
+      }
+      br {
+        display: none;
+      }
+    }
+    .content-brake {
+      height: 3px solid $gray;
+      margin: 0 0 25px;
+      padding: 0;
+    }
+  }
+}
+.post__paginations {
+  padding: 0;
+  a {
+    font-size: 14px;
+    line-height: 2;
+
+    display: block;
+
+    width: 170px;
+    height: 28px;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: #000;
+    border-radius: $base-border-radius;
+    background-color: #e4e4e4;
+    &:hover {
+      background-color: #d2d2d2;
+    }
+    &:before,
+    &:after {
+      width: 7px;
+      height: 7px;
+
+      content: '';
+
+      background-image: url(../img/base64/post__paginations-next.png);
+    }
+    &:after {
+      display: none;
+
+      margin-left: 8px;
+
+      background-image: url(../img/base64/post__paginations-next.png);
+    }
+    &:before {
+      display: inline-block;
+
+      margin-right: 8px;
+
+      background-image: url(../img/base64/post__paginations-prev.png);
+    }
+  }
+  &.post__paginations-reverse {
+    text-align: right;
+    a {
+      float: right;
+      &:before {
+        display: none;
+      }
+      &:after {
+        display: inline-block;
+      }
+    }
   }
 }
 .article-workvectors {

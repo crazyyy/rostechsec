@@ -9,6 +9,26 @@
           <?php the_content(); ?>
 
         </div><!-- col-md-12 -->
+
+        <hr class="col-md-12 content-brake">
+
+        <?php
+          $prev = mod_get_adjacent_post('prev', array('post'));
+          $next = mod_get_adjacent_post('next', array('post'));
+        ?>
+        <div class="col-md-3 post__paginations">
+          <?php if($prev) : ?>
+            <a href="<?php echo get_permalink( $prev->ID ); ?>">Предыдущая статья</a>
+          <?php endif; ?>
+        </div>
+
+        <div class="col-md-3 col-md-offset-6 post__paginations post__paginations-reverse">
+          <?php if($next) : ?>
+            <a href="<?php echo get_permalink($next->ID)?>">Следующая статья</a>
+          <?php endif; ?>
+        </div>
+
+
       </div><!-- /.row -->
 
     </article>
