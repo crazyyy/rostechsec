@@ -552,9 +552,134 @@ article {
     }
   }
   .popular-services__more {
-    margin: 0 auto;
     width: 180px;
+    margin: 0 auto;
     margin-left: 395px;
+  }
+}
+.article__content {
+  padding: 55px 0;
+  .content_title {
+    font-size: 40px;
+    font-weight: bold;
+
+    position: relative;
+
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #000;
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+
+      width: 50px;
+      height: 2px;
+      margin-left: -25px;
+
+      background-color: $gray;
+
+      @extend .dblock;
+    }
+  }
+  .article__content-thumbs {
+    img {
+      width: 100%;
+    }
+  }
+  .article__content-text {
+    font-family: 'Raleway';
+    font-size: 16px;
+    line-height: 1.2;
+  }
+}
+.article__popnews {
+  font-family: 'Raleway';
+
+  padding: 55px 0;
+
+  background-color: $gray;
+  .article__popnews-title {
+    font-size: 40px;
+    font-weight: bold;
+
+    margin: 0 0 25px;
+
+    text-transform: uppercase;
+  }
+  .article__popnews-more {
+    display: block;
+
+    width: 100%;
+
+    text-align: right;
+
+    color: $lightblue;
+  }
+  .article__popnews-popitem,
+  .article__popnews-newitem {
+    margin: 0 0 20px;
+    padding: 15px;
+
+    border: 3px solid transparent;
+    h5 {
+      font-size: 16px;
+      font-weight: bold;
+    }
+    p {
+      font-size: 14px;
+      line-height: 1.4;
+
+      text-align: justify;
+    }
+    .time,
+    .date {
+      font-size: 14px;
+
+      margin: 0 10px 0 0;
+      padding: 0 0 0 20px;
+
+      color: #000;
+      background-repeat: no-repeat;
+      background-position: left center;
+    }
+    .date {
+      background-image: url(../img/base64/ico-calendar.png);
+    }
+    .time {
+      background-image: url(../img/base64/ico-time.png);
+    }
+    &:hover {
+      border-color: $lightblue;
+      background-color: #fff;
+      h5,
+      p {
+        color: $lightblue;
+      }
+    }
+  }
+  .article__popnews-popitem {
+    &:nth-child(2),
+    &:nth-child(4) {
+      background-color: #eee0e3;
+    }
+    &:nth-child(3) {
+      background-color: #dfe7ee;
+    }
+  }
+  .article__popnews-newitem {
+    margin-bottom: 16px;
+
+    border: 3px solid #e8e8e8;
+    p {
+      line-height: 1.1;
+
+      text-align: left;
+    }
   }
 }
 
@@ -564,12 +689,85 @@ article {
 
 
 footer {
+  position: relative;
+
   height: $footer;
   margin: $footer_margin auto 0;
+  padding: 50px 0 0;
+  &:after {
+    position: absolute;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    left: 0;
 
-  background-color: $light-gray;
-  .inner {
-    height: $footer;
+    height: 84px;
+
+    background-color: $blue;
+
+    @extend .dblock;
+  }
+  .footernav {
+    margin-bottom: 70px;
+    h6 {
+      font-size: 18px;
+      font-weight: bold;
+
+      margin: 0 0 20px;
+
+      text-transform: uppercase;
+    }
+    ul {
+      li {
+        position: relative;
+
+        margin: 0 0 10px;
+        padding: 0 0 0 15px;
+        &:before {
+          position: absolute;
+          top: 4px;
+          left: 0;
+
+          width: 5px;
+          height: 5px;
+
+          border-radius: 50%;
+          background-color: #4c4c4c;
+
+          @extend .dblock;
+        }
+        a {
+          font-size: 16px;
+
+          color: $blue;
+          &:after {
+            display: none;
+
+            content: '  >';
+          }
+        }
+        &:hover {
+          &:before {
+            color: $blue;
+          }
+          a {
+            color: $lightblue;
+            &:after {
+              display: inline;
+            }
+          }
+        }
+      }
+    }
+  }
+  .footer-copywrite {
+    color: #fff;
+    text-align: center;
+    padding: 0;
+    span {
+      font-weight: bold;
+      font-size: 16px;
+    }
   }
 }
 
