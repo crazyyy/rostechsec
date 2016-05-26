@@ -265,6 +265,9 @@ if (function_exists('register_sidebar')) {
 //  Custom Excerpts
 //  RU: Произвольное обрезание текста
 
+function wpeExcerpt5($length) {
+  return 5;
+}
 function wpeExcerpt10($length) {
   return 10;
 }
@@ -291,6 +294,27 @@ function wpeExcerpt($length_callback = '', $more_callback = '') {
   echo $output;
 }
 
+/**
+ * Filter the except length to 20 characters.
+ *
+ * @param int $length Excerpt length.
+ * @return int (Maybe) modified excerpt length.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 5;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+function wpdocs_excerpt_more( $more ) {
+  return sprintf( ' ',
+    get_permalink( get_the_ID() ),
+    __( 'Read More', 'textdomain' )
+);
+
+}
+
+
+
+
 //  Custom View Article link to Post
 //  RU: Добавляем "Читать дальше" к обрезанным записям
 
@@ -299,6 +323,7 @@ function html5_blank_view_article($more) {
   return '... <!-- noindex --><a rel="nofollow" class="view-article" href="' . get_permalink($post->ID) . '">подробнее... </a><!-- /noindex -->';
 }
 add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
+
 
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation

@@ -13,8 +13,8 @@
         <hr class="col-md-12 content-brake">
 
         <?php
-          $prev = mod_get_adjacent_post('prev', array('post'));
-          $next = mod_get_adjacent_post('next', array('post'));
+          $prev = mod_get_adjacent_post('prev', array('page'));
+          $next = mod_get_adjacent_post('next', array('page'));
         ?>
         <div class="col-md-3 post__paginations">
           <?php if($prev) : ?>
