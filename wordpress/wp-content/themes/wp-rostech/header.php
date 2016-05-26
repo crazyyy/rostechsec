@@ -59,8 +59,8 @@
         </div><!-- /.col-md-12 header-slider -->
 
         <div class="col-md-12 header-search">
-          <form action="">
-            <input type="text" placeholder="Поиск по названию услуги или ЧП">
+          <form method="get" name="searchform" action="<?php bloginfo('url'); ?>/">
+            <input type="text" placeholder="Поиск по названию услуги или ЧП" value="" name="s">
             <button class="btn btn-header-search__submitt"></button>
           </form>
           <p>Например: <span class="quick"><span class="dotted">Зачистка резервуаров</span></span><span class="quick"><span class="dotted">ПМЛЛПА</span></span><span class="quick"><span class="dotted">ПМЛЛПА</span></span><span class="quick"><span class="dotted">Документы и нормативные акты</span></span><span class="quick"><span class="dotted">Законы</span></span></p>

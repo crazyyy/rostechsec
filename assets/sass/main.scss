@@ -629,6 +629,10 @@ article {
     h5 {
       font-size: 16px;
       font-weight: bold;
+
+      overflow: hidden;
+
+      height: 19px;
     }
     p {
       font-size: 14px;
@@ -675,8 +679,13 @@ article {
     margin-bottom: 16px;
 
     border: 3px solid #e8e8e8;
+    .article__popnews-newitem-text {
+      overflow: hidden;
+
+      height: 68px;
+    }
     p {
-      line-height: 1.1;
+      line-height: 1.4;
 
       text-align: left;
     }
@@ -686,7 +695,6 @@ article {
 .looper {
   @extend .clearfix;
 }
-
 
 footer {
   position: relative;
@@ -761,12 +769,14 @@ footer {
     }
   }
   .footer-copywrite {
-    color: #fff;
-    text-align: center;
     padding: 0;
+
+    text-align: center;
+
+    color: #fff;
     span {
-      font-weight: bold;
       font-size: 16px;
+      font-weight: bold;
     }
   }
 }
