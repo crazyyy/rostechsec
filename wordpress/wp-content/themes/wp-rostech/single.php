@@ -28,7 +28,6 @@
           <?php endif; ?>
         </div>
 
-
       </div><!-- /.row -->
 
     </article>
@@ -41,7 +40,5 @@
       </div><!-- /.row -->
     </article>
   <?php endif; ?>
-
-
 
 <?php get_footer(); ?>

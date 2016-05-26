@@ -945,11 +945,142 @@ article {
     }
   }
 }
+.cat-title {
+  font-size: 18px;
 
-.looper {
-  @extend .clearfix;
+  margin: 0;
+  padding: 30px 0 0;
+
+  text-transform: uppercase;
+
+  color: #5f5f5f;
+  a {
+    text-decoration: none;
+
+    color: #5f5f5f;
+  }
 }
+.loop-container {
+  padding: 0;
+  img {
+    width: 100%;
+  }
+}
+.looper {
+  position: relative;
 
+  padding: 30px 0 0;
+
+  @extend .clearfix;
+  hr {
+    height: 30px;
+    margin-right: 15px;
+    margin-left: 15px;
+
+    border-color: transparent;
+    border-bottom: 1px solid #d8d8d8;
+    border-bottom: 1px solid #d8d8d8;
+  }
+  .inner-title {
+    font-weight: normal;
+
+    margin: 0 0 15px;
+
+    text-transform: uppercase;
+    a {
+      color: $lightblue;
+    }
+  }
+}
+.looper-content {
+  p {
+    font-size: 14px;
+    line-height: 1.8;
+
+    color: #808080;
+  }
+  .date,
+  .time {
+    position: relative;
+    &:before,
+    &:after {
+      position: absolute;
+      top: 5px;
+      left: 10px;
+
+      width: 16px;
+      height: 16px;
+
+      background-repeat: no-repeat;
+      background-position: center;
+
+      @extend .dblock;
+    }
+  }
+  .date {
+    font-size: 13px;
+    line-height: 2;
+
+    display: block;
+
+    width: 230px;
+    height: 30px;
+    padding-left: 30px;
+
+    color: #808080;
+    border: 1px solid #eee;
+    background-color: #fcfcfc;
+    &:before {
+      background-image: url(../img/base64/ico-date-looper.png);
+    }
+    &:after {
+      top: 50%;
+      right: 90px;
+      left: auto;
+
+      width: 1px;
+      height: 12px;
+      margin-top: -6px;
+
+      background-color: #bdbdbd;
+    }
+    .time {
+      padding-left: 50px;
+      &:before {
+        top: 0;
+        left: 28px;
+
+        background-image: url(../img/base64/ico-time-looper.png);
+      }
+      &:after {
+        display: none;
+      }
+    }
+  }
+  .view-article {
+    display: none;
+  }
+}
+.pagination {
+  text-align: center;
+
+  @extend .clearfix;
+  a,
+  span {
+    display: inline-block;
+
+    margin: 0 5px;
+  }
+  span {
+    font-weight: bold;
+  }
+  .next {
+    float: right;
+  }
+  .prev {
+    float: left;
+  }
+}
 footer {
   position: relative;
 
