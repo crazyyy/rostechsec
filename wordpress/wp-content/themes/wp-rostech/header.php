@@ -66,6 +66,10 @@
           <p>Например: <span class="quick"><span class="dotted">Зачистка резервуаров</span></span><span class="quick"><span class="dotted">ПМЛЛПА</span></span><span class="quick"><span class="dotted">ПМЛЛПА</span></span><span class="quick"><span class="dotted">Документы и нормативные акты</span></span><span class="quick"><span class="dotted">Законы</span></span></p>
         </div><!-- /.header-search -->
 
+        <?php if ( is_singular() ) { ?>
+          <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
+        <?php } ?>
+
       </div><!-- row -->
     </div><!-- /.container -->
 
