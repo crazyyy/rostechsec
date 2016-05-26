@@ -21,17 +21,19 @@ $heading-line-height: 1.2;
 
 // Other Sizes
 $width: 980px;
-$footer: 50px;
+$footer: 292px;
 $footer_margin: $footer - 2 * $footer;
 $base-border-radius: 3px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
+$headerblueblock: 92px;
 
 // Colors
 $orange: orange;
 $red: red;
 $blue: #0057a1;
+$darkblue: darken($blue, 10%);
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
