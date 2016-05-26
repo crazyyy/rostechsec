@@ -124,7 +124,7 @@ header {
   }
   &:after {
     bottom: 0;
-
+  background-color: rgba(0, 87, 161, 0.21);
     height: 160px;
   }
   .logo {
@@ -425,6 +425,95 @@ section {
 article {
   @extend .clearfix;
 }
+.article-workvectors {
+  font-family: 'Raleway';
+
+  padding: 50px 0 45px;
+  .article-workvectors__title {
+    font-size: 40px;
+    font-weight: bold;
+
+    margin: 0 0 25px;
+
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .article-workvectors__item {
+    font-size: 18px;
+    font-weight: bold;
+
+    position: relative;
+
+    height: 195px;
+    padding: 110px 0 0;
+
+    text-align: center;
+    text-decoration: none;
+
+    color: #000;
+    border: 3px solid transparent;
+    background-position: center;
+    &:before {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+
+      width: 80px;
+      height: 70px;
+      margin-left: -40px;
+
+      background-repeat: no-repeat;
+      background-position: center top;
+
+      @extend .dblock;
+    }
+    h5 {
+      padding: 10px 0;
+    }
+    &:hover {
+      border: 3px solid $darkblue;
+      h5 {
+        color: #fff;
+        background-color: rgba(0, 87, 161, .42);;
+      }
+    }
+    &.article-workvectors__item-1 {
+      &:before {
+        background-image: url(../img/base64/ico-workvectors-1.png);
+      }
+      &:hover {
+        background-image: url(../img/content/article-workvectors__item-1.png);
+        &:before {
+          background-image: url(../img/base64/ico-workvectors-1-h.png);
+        }
+      }
+    }
+    &.article-workvectors__item-2 {
+      &:before {
+        background-image: url(../img/base64/ico-workvectors-2.png);
+      }
+      &:hover {
+        background-image: url(../img/content/article-workvectors__item-2.png);
+        &:before {
+          background-image: url(../img/base64/ico-workvectors-2-h.png);
+        }
+      }
+    }
+    &.article-workvectors__item-3 {
+      &:before {
+        background-image: url(../img/base64/ico-workvectors-3.png);
+      }
+      &:hover {
+        background-image: url(../img/content/article-workvectors__item-3.png);
+        &:before {
+          background-image: url(../img/base64/ico-workvectors-3-h.png);
+        }
+      }
+    }
+  }
+}
+
+
 .looper {
   @extend .clearfix;
 }
