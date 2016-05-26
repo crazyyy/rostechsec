@@ -124,8 +124,10 @@ header {
   }
   &:after {
     bottom: 0;
-  background-color: rgba(0, 87, 161, 0.21);
+
     height: 160px;
+
+    background-color: rgba(0, 87, 161, .21);
   }
   .logo {
     position: absolute;
@@ -512,7 +514,49 @@ article {
     }
   }
 }
+.article__popular-services {
+  padding: 55px 0;
 
+  background-color: $gray;
+  .popular-services {
+    text-decoration: none;
+
+    color: #000;
+    border: 3px solid transparent;
+    h5 {
+      font-size: 18px;
+      font-weight: bold;
+
+      position: relative;
+
+      padding: 10px 0 10px 65px;
+      img {
+        position: absolute;
+        top: 5px;
+        left: 0;
+      }
+    }
+    p {
+      font-size: 16px;
+      font-weight: 300;
+    }
+    &:hover {
+      color: $lightblue;
+      border: 3px solid $lightblue;
+    }
+    &:nth-child(5),
+    &:nth-child(6),
+    &:nth-child(7),
+    &:nth-child(8) {
+      margin-bottom: 20px;
+    }
+  }
+  .popular-services__more {
+    margin: 0 auto;
+    width: 180px;
+    margin-left: 395px;
+  }
+}
 
 .looper {
   @extend .clearfix;
