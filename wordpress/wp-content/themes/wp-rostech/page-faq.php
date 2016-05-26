@@ -1,14 +1,15 @@
-<?php get_header(); ?>
+<?php /* Template Name: FAQ Page Template */ get_header(); ?>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" <?php post_class('container'); ?>>
 
       <div class="row">
         <div class="col-md-12">
 
-          <h1 class="single-title inner-title"><?php _e( 'Page not found', 'wpeasy' ); ?></h1>
-          <h2><a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'wpeasy' ); ?></a></h2>
+          <h1 class="single-title inner-title"><?php the_title(); ?></h1>
+          <?php the_content(); ?>
 
         </div><!-- col-md-12 -->
+
       </div><!-- /.row -->
 
     </article>

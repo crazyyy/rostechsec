@@ -1,10 +1,13 @@
 <?php get_header(); ?>
-  <article>
 
-    <h1 class="ctitle"><?php _e( 'Latest Posts', 'wpeasy' ); ?></h1>
-    <?php get_template_part('loop'); ?>
-    <?php get_template_part('pagination'); ?>
+  <div class="container">
+    <div class="row">
+      <h1 class="col-md-12 cat-title"><?php _e( 'Latest Posts', 'wpeasy' ); ?></h1>
+      <div class="col-md-12 loop-container">
+        <?php get_template_part('loop'); ?>
+      </div><!-- loop-container -->
+      <?php get_template_part('pagination'); ?>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
 
-  </article>
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
