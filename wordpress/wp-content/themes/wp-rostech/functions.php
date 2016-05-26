@@ -114,10 +114,56 @@ function wpeHeadNav() {
   );
 }
 // WPE footer navigation
-function wpeFootNav() {
+function wpeFootNavOne() {
   wp_nav_menu(
   array(
-    'theme_location'  => 'footer-menu',
+    'theme_location'  => 'footer-menu-1',
+    'menu'            => '',
+    'container'       => 'div',
+    'container_class' => 'menu-{menu slug}-container',
+    'container_id'    => '',
+    'menu_class'      => 'menu',
+    'menu_id'         => '',
+    'echo'            => true,
+    'fallback_cb'     => 'wp_page_menu',
+    'before'          => '',
+    'after'           => '',
+    'link_before'     => '',
+    'link_after'      => '',
+    'items_wrap'      => '<ul class="footernav">%3$s</ul>',
+    'depth'           => 0,
+    'walker'          => ''
+    )
+  );
+}
+// WPE footer navigation
+function wpeFootNavTwo() {
+  wp_nav_menu(
+  array(
+    'theme_location'  => 'footer-menu-2',
+    'menu'            => '',
+    'container'       => 'div',
+    'container_class' => 'menu-{menu slug}-container',
+    'container_id'    => '',
+    'menu_class'      => 'menu',
+    'menu_id'         => '',
+    'echo'            => true,
+    'fallback_cb'     => 'wp_page_menu',
+    'before'          => '',
+    'after'           => '',
+    'link_before'     => '',
+    'link_after'      => '',
+    'items_wrap'      => '<ul class="footernav">%3$s</ul>',
+    'depth'           => 0,
+    'walker'          => ''
+    )
+  );
+}
+// WPE footer navigation
+function wpeFootNavTh() {
+  wp_nav_menu(
+  array(
+    'theme_location'  => 'footer-menu-3',
     'menu'            => '',
     'container'       => 'div',
     'container_class' => 'menu-{menu slug}-container',
@@ -165,7 +211,9 @@ function register_html5_menu() {
   register_nav_menus(array(
     'header-menu' => __('Меню в шапке', 'wpeasy'),
     'sidebar-menu' => __('Меню в сайдбар', 'wpeasy'),
-    'footer-menu' => __('Меню в подвал', 'wpeasy')
+    'footer-menu-1' => __('Меню #1 в подвал', 'wpeasy'),
+    'footer-menu-2' => __('Меню #2 в подвал', 'wpeasy'),
+    'footer-menu-3' => __('Меню #3 в подвал', 'wpeasy'),
   ));
 }
 //  If Dynamic Sidebar Existsов
@@ -181,17 +229,37 @@ if (function_exists('register_sidebar')) {
     'after_title' => '</h6>'
   ));
   //  Define Sidebar Widget Area 2. If your want to display more widget - uncoment this
-  /*
+
   register_sidebar(array(
-    'name' => __('Блок виджетов #2', 'wpeasy'),
+    'name' => __('Блок виджетов подвал #1', 'wpeasy'),
     'description' => __('Description for this widget-area...', 'wpeasy'),
     'id' => 'widgetarea2',
-    'before_widget' => '<div id="%1$s" class="widget %2$s">',
+    'before_widget' => '<div id="%1$s" class="col-md-6 footernav footernav-first %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h6>',
     'after_title' => '</h6>'
   ));
-  */
+
+  register_sidebar(array(
+    'name' => __('Блок виджетов подвал #2', 'wpeasy'),
+    'description' => __('Description for this widget-area...', 'wpeasy'),
+    'id' => 'widgetarea3',
+    'before_widget' => '<div id="%1$s" class="col-md-3 footernav footernav-middle %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h6>',
+    'after_title' => '</h6>'
+  ));
+
+  register_sidebar(array(
+    'name' => __('Блок виджетов подвал #3', 'wpeasy'),
+    'description' => __('Description for this widget-area...', 'wpeasy'),
+    'id' => 'widgetarea4',
+    'before_widget' => '<div id="%1$s" class="col-md-3 footernav footernav-last %2$s">',
+    'after_widget' => '</div>',
+    'before_title' => '<h6>',
+    'after_title' => '</h6>'
+  ));
+
 }
 
 //  Custom Excerpts
