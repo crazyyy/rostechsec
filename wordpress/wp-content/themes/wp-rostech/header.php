@@ -88,7 +88,6 @@
     </div><!-- /.container -->
 
     <?php if ( is_page_template('front-page.php') ) { ?>
-
       <div class="header-slider__fullsize">
         <?php if( have_rows('slider', 22) ): ?>
           <?php while( have_rows('slider', 22) ): the_row(); ?>
@@ -99,10 +98,7 @@
         <?php endif; ?>
       </div><!-- /.header-slider__fullsize -->
 
-
-
-</div>
-
+    </div>
 
     <?php } ?>
 
