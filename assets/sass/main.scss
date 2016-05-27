@@ -116,7 +116,7 @@ picture {
   width: 100%;
   height: auto !important;
   height: 100%;
-  min-height: 100%;
+  /* min-height: 100%; */
   margin: 0 auto;
 
   @extend .clearfix;
@@ -347,7 +347,7 @@ header {
 
     display: none;
 
-    padding: 0 185px 0 0;
+    padding: 0;
 
     color: #fff;
     .header-slider__title {
@@ -355,6 +355,7 @@ header {
       font-weight: 300;
 
       margin: 0;
+      padding: 0 215px 0 0;
 
       text-transform: uppercase;
     }
@@ -363,11 +364,86 @@ header {
       font-size: 21px;
       font-weight: 300;
       line-height: 1.5;
+
+      padding: 0 215px 0 0;
     }
     .header-slider__more {
       position: absolute;
       top: 8px;
       right: 0;
+
+      width: 200px;
+    }
+    .owl-controls {
+      position: absolute;
+      top: 55px;
+      right: 0;
+
+      width: 200px;
+      height: 24px;
+      margin: 0;
+      .owl-nav {
+        @extend .clearfix;
+        .owl-prev,
+        .owl-next {
+          line-height: 1.5;
+
+          position: relative;
+          z-index: 50;
+
+          overflow: hidden;
+
+          width: 24px;
+          height: 24px;
+          margin: 0;
+          padding: 0;
+
+          text-align: center;
+
+          color: $lightblue;
+          border: 1px solid $blue;
+          border-radius: 0;
+          background-color: transparent;
+          &:hover {
+            background-color: $blue;
+          }
+        }
+        .owl-prev {
+          float: left;
+        }
+        .owl-next {
+          float: right;
+        }
+      }
+      .owl-dots {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        .owl-dot {
+          width: 24px;
+          height: 24px;
+          margin: 0 3px;
+          padding: 4px;
+
+          border: 1px solid $blue;
+          background-color: transparent;
+          span {
+            width: 14px;
+            height: 14px;
+            margin: 0;
+
+            border-radius: 0;
+            background-color: transparent;
+          }
+          &.active {
+            span {
+              background-color: #fff;
+            }
+          }
+        }
+      }
     }
   }
   .header-slider__fullsize {
@@ -381,10 +457,23 @@ header {
 
     height: 456px;
 
-    background-image: url(../img/content/slider-bg.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+    .owl-item {
+      height: 456px;
+    }
+    .header-slider__fullsize-item {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      height: 456px;
+
+
+    }
   }
   .header-search {
     position: absolute;
@@ -1365,4 +1454,6 @@ footer {
 @import 'fonts/font_acrom';
 @import 'fonts/font_raleway';
 @import 'base64';
+@import 'owl.carousel.min';
+@import 'owl.theme.default.min';
 @import 'import/print';

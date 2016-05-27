@@ -13,7 +13,7 @@
       <h2 class="inner-title">
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
       </h2><!-- /post title -->
-      <?php wpeExcerpt('wpeExcerpt40'); ?>
+      <p><?php wpeExcerpt('wpeExcerpt40'); ?></p>
       <span class="date"><?php the_time('j F Y'); ?> <span class="time"><?php the_time('G:i'); ?></span></span>
     </div><!-- /.col-md-9 looper-content -->
 

@@ -6,15 +6,15 @@
         <div class="row">
           <h4 class="col-md-12 article-workvectors__title">Направление нашей деятельности</h4>
 
-          <a class="col-md-4 article-workvectors__item article-workvectors__item-1" href="">
+          <a class="col-md-4 article-workvectors__item article-workvectors__item-1" href="<?php the_field('direct-link-1'); ?>">
             <h5>Аварийно-спасательные работы</h5>
           </a><!-- /.col-md-4 article-workvectors__item -->
 
-          <a class="col-md-4 article-workvectors__item article-workvectors__item-2" href="">
+          <a class="col-md-4 article-workvectors__item article-workvectors__item-2" href="<?php the_field('direct-link-2'); ?>">
             <h5>Разработка паспортов и планов</h5>
           </a><!-- /.col-md-4 article-workvectors__item -->
 
-          <a class="col-md-4 article-workvectors__item article-workvectors__item-3" href="">
+          <a class="col-md-4 article-workvectors__item article-workvectors__item-3" href="<?php the_field('direct-link-3'); ?>">
             <h5>Обслуживание опасных производственных объектов</h5>
           </a><!-- /.col-md-4 article-workvectors__item -->
 
@@ -26,47 +26,19 @@
       <div class="container">
         <div class="row">
 
-          <a class="col-md-3 popular-services" href="">
-            <h5><img src="<?php echo get_template_directory_uri(); ?>/img/base64/popular-services-1.png" alt="">Зачистка резервуаров</h5>
-            <p>Основной задачей ПАСФ "РосТехЗащита" является внедрение комплексной </p>
-          </a><!-- /.col-md-3 popular-services -->
+          <?php $posts = get_field('services'); if( $posts ): ?>
 
-          <a class="col-md-3 popular-services" href="">
-            <h5><img src="<?php echo get_template_directory_uri(); ?>/img/base64/popular-services-2.png" alt="">Зачистка резервуаров</h5>
-            <p>Основной задачей ПАСФ "РосТехЗащита" является внедрение комплексной </p>
-          </a><!-- /.col-md-3 popular-services -->
+            <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+              <?php setup_postdata($post); ?>
+                <a class="col-md-3 popular-services" href="<?php the_permalink(); ?>">
+                  <h5><?php the_post_thumbnail('medium'); ?><span><?php the_title(); ?></span></h5>
+                  <p><?php wpeExcerpt('wpeExcerpt5'); ?></p>
+                </a><!-- /.col-md-3 popular-services -->
+              <?php endforeach; ?>
+            <?php wp_reset_postdata(); ?>
+          <?php endif; ?>
 
-          <a class="col-md-3 popular-services" href="">
-            <h5><img src="<?php echo get_template_directory_uri(); ?>/img/base64/popular-services-3.png" alt="">Зачистка резервуаров</h5>
-            <p>Основной задачей ПАСФ "РосТехЗащита" является внедрение комплексной </p>
-          </a><!-- /.col-md-3 popular-services -->
-
-          <a class="col-md-3 popular-services" href="">
-            <h5><img src="<?php echo get_template_directory_uri(); ?>/img/base64/popular-services-4.png" alt="">Зачистка резервуаров</h5>
-            <p>Основной задачей ПАСФ "РосТехЗащита" является внедрение комплексной </p>
-          </a><!-- /.col-md-3 popular-services -->
-
-          <a class="col-md-3 popular-services" href="">
-            <h5><img src="<?php echo get_template_directory_uri(); ?>/img/base64/popular-services-5.png" alt="">Зачистка резервуаров</h5>
-            <p>Основной задачей ПАСФ "РосТехЗащита" является внедрение комплексной </p>
-          </a><!-- /.col-md-3 popular-services -->
-
-          <a class="col-md-3 popular-services" href="">
-            <h5><img src="<?php echo get_template_directory_uri(); ?>/img/base64/popular-services-6.png" alt="">Зачистка резервуаров</h5>
-            <p>Основной задачей ПАСФ "РосТехЗащита" является внедрение комплексной </p>
-          </a><!-- /.col-md-3 popular-services -->
-
-          <a class="col-md-3 popular-services" href="">
-            <h5><img src="<?php echo get_template_directory_uri(); ?>/img/base64/popular-services-7.png" alt="">Зачистка резервуаров</h5>
-            <p>Основной задачей ПАСФ "РосТехЗащита" является внедрение комплексной</p>
-          </a><!-- /.col-md-3 popular-services -->
-
-          <a class="col-md-3 popular-services" href="">
-            <h5><img src="<?php echo get_template_directory_uri(); ?>/img/base64/popular-services-8.png" alt="">Зачистка резервуаров</h5>
-            <p>Основной задачей ПАСФ "РосТехЗащита" является внедрение комплексной</p>
-          </a><!-- /.col-md-3 popular-services -->
-
-          <a href="" class="btn btn-blue popular-services__more">Все услуги</a>
+          <a href="<?php bloginfo('url'); ?>/?p=31" class="btn btn-blue popular-services__more">Все услуги</a>
 
         </div><!-- /.row -->
       </div><!-- /.container -->
@@ -96,25 +68,20 @@
 
           <div class="col-md-8 article__popnews-popular">
             <h4 class="article__popnews-title">Популярная информация</h4>
-            <div class="article__popnews-popitem">
-              <h5>Заголовок для первого горизонтального баннера </h5>
-              <p>Профессиональное аварийно - спасательное формирование "РосТехЗащита" предлагает Вам уникальные комплексные услуги в сфере экологической и промышленной безопасности объектов нефтегазового комплекса, <a href="" class="popnews-more">подробнее... </a></p>
-              <span class="date">21 03 2016</span><span class="time">18:06</span>
-            </div><!-- /.article__popnews-popitem -->
 
-            <div class="article__popnews-popitem">
-              <h5>Заголовок для первого горизонтального баннера </h5>
-              <p>Профессиональное аварийно - спасательное формирование "РосТехЗащита" предлагает Вам уникальные комплексные услуги в сфере экологической и промышленной безопасности объектов нефтегазового комплекса, <a href="" class="popnews-more">подробнее... </a></p>
-              <span class="date">21 03 2016</span><span class="time">18:06</span>
-            </div><!-- /.article__popnews-popitem -->
+            <?php $posts = get_field('populars'); if( $posts ): ?>
+              <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+                <?php setup_postdata($post); ?>
+                <div class="article__popnews-popitem">
+                  <h5><?php the_title(); ?></h5>
+                  <p><?php wpeExcerpt('wpeExcerpt20'); ?><a href="<?php the_permalink(); ?>" class="popnews-more">подробнее... </a></p>
+                  <span class="date"><?php the_time('d m Y'); ?></span><span class="time"><?php the_time('G:i'); ?></span>
+                </div><!-- /.article__popnews-popitem -->
+                <?php endforeach; ?>
+              <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
 
-            <div class="article__popnews-popitem">
-              <h5>Заголовок для первого горизонтального баннера </h5>
-              <p>Профессиональное аварийно - спасательное формирование "РосТехЗащита" предлагает Вам уникальные комплексные услуги в сфере экологической и промышленной безопасности объектов нефтегазового комплекса, <a href="" class="popnews-more">подробнее... </a></p>
-              <span class="date">21 03 2016</span><span class="time">18:06</span>
-            </div><!-- /.article__popnews-popitem -->
-
-            <a href="" class="article__popnews-more">Смотреть еще...</a>
+            <a href="<?php the_field('populat_link'); ?>" class="article__popnews-more">Смотреть еще...</a>
 
           </div><!-- /.col-md-8 article__popnews-popular -->
 
@@ -127,7 +94,7 @@
               <div class="article__popnews-newitem">
                 <h5><?php the_title(); ?></h5>
                 <div class="article__popnews-newitem-text">
-                  <?php wpeExcerpt('wpeExcerpt10'); ?>
+                  <p><?php wpeExcerpt('wpeExcerpt10'); ?><a href="<?php the_permalink(); ?>" class="popnews-more">подробнее... </a></p>
                 </div><!-- article__popnews-newitem-text -->
                 <span class="date"><?php the_time('d m Y'); ?></span><span class="time"><?php the_time('G:i'); ?></span>
               </div><!-- /.article__popnews-newitem -->
@@ -135,7 +102,7 @@
             <?php endwhile; endif; ?>
             <?php wp_reset_query(); ?>
 
-            <a href="" class="article__popnews-more">Смотреть еще...</a>
+            <a href="<?php bloginfo('url'); ?>/?cat=1" class="article__popnews-more">Смотреть еще...</a>
 
           </div><!-- /.col-md-4 article__popnews-news -->
 

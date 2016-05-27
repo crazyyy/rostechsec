@@ -50,12 +50,20 @@
           <button class="header-callback__button">Обратный звонок</button>
         </div><!-- /.header-callback -->
 
-        <h1 class="col-md-12 header__title">Расширенный статичый <a href="">заголовок</a></h1>
+        <?php if ( is_page_template('front-page.php') ) { ?>
+
+        <h1 class="col-md-12 header__title"><?php the_field('hometitle'); ?></h1>
 
         <div class="col-md-12 header-slider">
-          <h3 class="header-slider__title">зАГОЛОВОК ТЕКСТА НА СЛАЙДЕРЕ</h3>
-          <p class="header-slider__description">Подпись к заголовку. Пример: Портал РосТехЗащита поздравляет вас с Пасхой! Желаем вам счастья, здоровья и благополучия!</p>
-          <a href="#" class="btn header-slider__more">Подробнее</a>
+          <?php if( have_rows('slider', 22) ): ?>
+            <?php while( have_rows('slider', 22) ): the_row(); ?>
+              <div class="header-slider__item">
+                <h3 class="header-slider__title"><?php the_sub_field('slider_title'); ?></h3>
+                <p class="header-slider__description"><?php the_sub_field('slider_description'); ?></p>
+                <a href="<?php the_sub_field('slider_link'); ?>" class="btn header-slider__more">Подробнее</a>
+              </div><!-- /.header-slider__item -->
+            <?php endwhile; ?>
+          <?php endif; ?>
         </div><!-- /.col-md-12 header-slider -->
 
         <div class="col-md-12 header-search">
@@ -63,20 +71,42 @@
             <input type="text" placeholder="Поиск по названию услуги или ЧП" value="" name="s">
             <button class="btn btn-header-search__submitt"></button>
           </form>
-          <p>Например: <span class="quick"><span class="dotted">Зачистка резервуаров</span></span><span class="quick"><span class="dotted">ПМЛЛПА</span></span><span class="quick"><span class="dotted">ПМЛЛПА</span></span><span class="quick"><span class="dotted">Документы и нормативные акты</span></span><span class="quick"><span class="dotted">Законы</span></span></p>
+          <p>Например:
+            <?php if( have_rows('searches', 22) ): ?>
+              <?php while( have_rows('searches', 22) ): the_row(); ?>
+                <span class="quick"><span class="dotted"><?php the_sub_field('seqarchquery'); ?></span></span>
+              <?php endwhile; ?>
+            <?php endif; ?>
+          </p>
         </div><!-- /.header-search -->
 
-        <?php if ( is_singular() ) { ?>
+        <?php } else { ?>
           <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
         <?php } ?>
 
       </div><!-- row -->
     </div><!-- /.container -->
 
-    <div class="header-slider__fullsize">
+    <?php if ( is_page_template('front-page.php') ) { ?>
 
-    </div><!-- /.header-slider__fullsize -->
+      <div class="header-slider__fullsize">
+        <?php if( have_rows('slider', 22) ): ?>
+          <?php while( have_rows('slider', 22) ): the_row(); ?>
+            <?php $image = get_sub_field('image'); if( !empty($image) ): ?>
+              <div class="header-slider__fullsize-item" style="background-image: url(<?php echo $image['url']; ?>);"></div>
+            <?php endif; ?>
+          <?php endwhile; ?>
+        <?php endif; ?>
+      </div><!-- /.header-slider__fullsize -->
+
+
+
+</div>
+
+
+    <?php } ?>
 
   </header><!-- /header -->
 
   <section role="main">
+

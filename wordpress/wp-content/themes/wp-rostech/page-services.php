@@ -11,7 +11,7 @@
             <?php setup_postdata($post); ?>
               <a class="col-md-3 popular-services" href="<?php the_permalink(); ?>">
                 <h5><?php the_post_thumbnail('medium'); ?><span><?php the_title(); ?></span></h5>
-                <?php the_excerpt(); ?>
+                <p><?php wpeExcerpt('wpeExcerpt5'); ?></p>
               </a><!-- /.col-md-3 popular-services -->
             <?php endforeach; ?>
           <?php wp_reset_postdata(); ?>
