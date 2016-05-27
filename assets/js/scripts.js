@@ -23,6 +23,7 @@ if (typeof jQuery == 'undefined') {
 // Place any jQuery/helper plugins in here.
 
 $(document).ready(function() {
+/** Modal windows */
   $('.header-callback__button').click(function(event) {
     $('.vmodal-bg').fadeIn('400');
     $('body').addClass('modaled');
@@ -35,4 +36,24 @@ $(document).ready(function() {
     $('.vmodal-bg').fadeOut('400');
     $('body').removeClass('modaled');
   });
+  /** FAQ page */
+  $('.question').click(function(event) {
+    /* Act on the event */
+    $(this).toggleClass('question-o');
+    var $thisAnser = $(this).parent('li').children('.answer');
+    if ( $thisAnser.hasClass('anser-o') ) {
+      $thisAnser.toggleClass('anser-o');
+      $thisAnser.fadeOut('400');
+    } else {
+      $thisAnser.toggleClass('anser-o');
+      $thisAnser.fadeIn('400');
+    }
+  });
+  /** Header Search on frontpage */
+  $('.header-search .dotted').click(function(event) {
+    /* Act on the event */
+    var searchValue = $(this).html();
+    $('.header-search input').val(searchValue);
+  });
+
 });
