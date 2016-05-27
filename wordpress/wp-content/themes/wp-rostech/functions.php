@@ -457,17 +457,17 @@ function filter_media_comment_status( $open, $post_id ) {
   return $open;
 }
 
- // Редирект записи, когда поисковый запрос выдает один результат
- // http://wordpresso.org/hacks/29-wordpress-tryukov-dlya-rabotyi-s-zapisyami-i-stranitsami/
-add_action('template_redirect', 'single_result');
-function single_result() {
-  if (is_search()) {
-    global $wp_query;
-    if ($wp_query->post_count == 1) {
-      wp_redirect( get_permalink( $wp_query->posts['0']->ID ) );
-    }
-  }
-}
+//  // Редирект записи, когда поисковый запрос выдает один результат
+//  // http://wordpresso.org/hacks/29-wordpress-tryukov-dlya-rabotyi-s-zapisyami-i-stranitsami/
+// add_action('template_redirect', 'single_result');
+// function single_result() {
+//   if (is_search()) {
+//     global $wp_query;
+//     if ($wp_query->post_count == 1) {
+//       wp_redirect( get_permalink( $wp_query->posts['0']->ID ) );
+//     }
+//   }
+// }
 
 // хлебные крошки   http://dimox.name/wordpress-breadcrumbs-without-a-plugin/
 // < ?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ? >

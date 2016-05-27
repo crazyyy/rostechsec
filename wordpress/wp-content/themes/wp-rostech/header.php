@@ -43,7 +43,7 @@
         </nav><!-- /.headnav-container -->
 
         <div class="header-gosearch">
-          <button class="header-gosearch__button" title="Поиск"></button>
+          <a href="<?php echo home_url(); ?>/search" class="header-gosearch__button" title="Поиск"></a>
         </div><!-- /.header-gosearch -->
 
         <div class="header-callback">
