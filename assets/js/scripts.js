@@ -55,6 +55,37 @@ $(document).ready(function() {
     var searchValue = $(this).html();
     $('.header-search input').val(searchValue);
   });
+  /** header navi toggle  */
+  var $firstMenuBlock = $('.header-subnavi-first');
+  var $secondMenuBlock = $('.header-subnavi-second');
+  var $thirdMenuBlock = $('.header-subnavi-third');
+
+
+  $('#menu-item-36').click(function(event) {
+    /* Act on the event */
+    event.preventDefault();
+    $secondMenuBlock.removeClass('header-subnavi-opened');
+    $thirdMenuBlock.removeClass('header-subnavi-opened');
+    $firstMenuBlock.toggleClass('header-subnavi-opened');
+  });
+
+  $('#menu-item-37').click(function(event) {
+    /* Act on the event */
+    event.preventDefault();
+    $firstMenuBlock.removeClass('header-subnavi-opened');
+    $thirdMenuBlock.removeClass('header-subnavi-opened');
+    $secondMenuBlock.toggleClass('header-subnavi-opened');
+  });
+
+  $('#menu-item-38').click(function(event) {
+    /* Act on the event */
+    event.preventDefault();
+    $secondMenuBlock.removeClass('header-subnavi-opened');
+    $firstMenuBlock.removeClass('header-subnavi-opened');
+    $thirdMenuBlock.toggleClass('header-subnavi-opened');
+  });
+
+
 
 });
 

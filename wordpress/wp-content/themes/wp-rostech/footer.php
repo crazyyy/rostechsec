@@ -53,6 +53,82 @@
   </div><!-- /.container -->
 </div><!-- vmodal-bg -->
 
+<div class="header-subnavi header-subnavi-first">
+  <div class="container">
+    <div class="row">
+
+      <?php if( have_rows('submenu_1', 22) ): ?>
+        <?php while( have_rows('submenu_1', 22) ): the_row(); ?>
+          <div class="col-md-4">
+            <h6 class="header-subnavi__title"><?php the_sub_field('block_title'); ?></h6>
+            <?php $posts = get_sub_field('submenus'); if( $posts ): ?>
+              <ul>
+                <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+                  <?php setup_postdata($post); ?>
+                  <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?><span><?php the_title(); ?></span></a></li>
+                  <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
+              </ul>
+            <?php endif; ?>
+          </div>
+        <?php endwhile; ?>
+      <?php endif; ?>
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div><!-- /.header-subnavi header-subnavi-first -->
+
+<div class="header-subnavi header-subnavi-second">
+  <div class="container">
+    <div class="row">
+
+      <?php if( have_rows('submenu_2', 22) ): ?>
+        <?php while( have_rows('submenu_2', 22) ): the_row(); ?>
+          <div class="col-md-4">
+            <h6 class="header-subnavi__title"><?php the_sub_field('block_title'); ?></h6>
+            <?php $posts = get_sub_field('submenus'); if( $posts ): ?>
+              <ul>
+                <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+                  <?php setup_postdata($post); ?>
+                  <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?><span><?php the_title(); ?></span></a></li>
+                  <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
+              </ul>
+            <?php endif; ?>
+          </div>
+        <?php endwhile; ?>
+      <?php endif; ?>
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div><!-- /.header-subnavi header-subnavi-second -->
+
+<div class="header-subnavi header-subnavi-third">
+  <div class="container">
+    <div class="row">
+
+      <?php if( have_rows('submenu_3', 22) ): ?>
+        <?php while( have_rows('submenu_3', 22) ): the_row(); ?>
+          <div class="col-md-4">
+            <h6 class="header-subnavi__title"><?php the_sub_field('block_title'); ?></h6>
+            <?php $posts = get_sub_field('submenus'); if( $posts ): ?>
+              <ul>
+                <?php foreach( $posts as $post): // variable must be called $post (IMPORTANT) ?>
+                  <?php setup_postdata($post); ?>
+                  <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('medium'); ?><span><?php the_title(); ?></span></a></li>
+                  <?php endforeach; ?>
+                <?php wp_reset_postdata(); ?>
+              </ul>
+            <?php endif; ?>
+          </div>
+        <?php endwhile; ?>
+      <?php endif; ?>
+
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div><!-- /.header-subnavi header-subnavi-third -->
+
+
   <?php wp_footer(); ?>
 
 </body>
