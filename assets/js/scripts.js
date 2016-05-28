@@ -85,6 +85,47 @@ $(document).ready(function() {
     $thirdMenuBlock.toggleClass('header-subnavi-opened');
   });
 
+  /** Enable mobile menu on small screen */
+  // get browser width and height on window resize
+  // when window size changed - resize first block
+  window.addEventListener('resize', setWindowSize);
+  function setWindowSize() {
+    if (typeof (window.innerWidth) == 'number') {
+      myWidth = window.innerWidth;
+      myHeight = window.innerHeight;
+      EnableDisableMobileMenu();
+    } else {
+      if (document.documentElement && (document.documentElement.clientWidth || document.documentElement.clientHeight)) {
+        myWidth = document.documentElement.clientWidth;
+        myHeight = document.documentElement.clientHeight;
+        EnableDisableMobileMenu();
+      } else {
+        if (document.body && (document.body.clientWidth || document.body.clientHeight)) {
+          myWidth = document.body.clientWidth;
+          myHeight = document.body.clientHeight;
+          EnableDisableMobileMenu();
+        }
+      }
+    }
+  }
+  function EnableDisableMobileMenu(){
+    if ( myWidth <= 767 ) {
+      $('.headnav-container').click(function(event) {
+        /* Act on the event */
+        $(this).toggleClass('.headnav-container-o');
+      });
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function(event) {
+    setWindowSize();
+  });
+
+  $('.headnav-container').click(function(event) {
+    /* Act on the event */
+    $(this).toggleClass('headnav-container-o');
+  });
+
 
 
 });

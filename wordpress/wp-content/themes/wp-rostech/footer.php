@@ -27,7 +27,7 @@
         </div><!-- /.col-md-3 footernav footernav-last -->
       <?php endif; ?>
 
-      <div class="col-md-12 footer-copywrite">
+      <div class="col-md-12 col-sm-12 footer-copywrite">
         <p><span>Профессиональное аварийно-спасательное формирование "РосТехЗащита"</span>    © <?php echo date("Y"); ?> Копирование информации запрещено</p>
       </div><!-- /.col-md-12 footer-copywrite -->
 
