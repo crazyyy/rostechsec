@@ -16,13 +16,13 @@
           $prev = mod_get_adjacent_post('prev', array('page'));
           $next = mod_get_adjacent_post('next', array('page'));
         ?>
-        <div class="col-md-3 post__paginations">
+        <div class="col-md-3 col-sm-6 col-xs-12 post__paginations">
           <?php if($prev) : ?>
             <a href="<?php echo get_permalink( $prev->ID ); ?>">Предыдущая статья</a>
           <?php endif; ?>
         </div>
 
-        <div class="col-md-3 col-md-offset-6 post__paginations post__paginations-reverse">
+        <div class="col-md-3 col-sm-6 col-xs-12 col-md-offset-6 post__paginations post__paginations-reverse">
           <?php if($next) : ?>
             <a href="<?php echo get_permalink($next->ID)?>">Следующая статья</a>
           <?php endif; ?>

@@ -200,7 +200,7 @@ if (function_exists('register_sidebar')) {
     'name' => __('Блок виджетов подвал #1', 'wpeasy'),
     'description' => __('Description for this widget-area...', 'wpeasy'),
     'id' => 'widgetarea2',
-    'before_widget' => '<div id="%1$s" class="col-md-6 col-sm-6 col-xs12 footernav footernav-first %2$s">',
+    'before_widget' => '<div id="%1$s" class="col-md-6 col-sm-6 col-xs-12 footernav footernav-first %2$s">',
     'after_widget' => '</div>',
     'before_title' => '<h6>',
     'after_title' => '</h6>'

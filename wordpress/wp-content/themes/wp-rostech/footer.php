@@ -41,12 +41,7 @@
     <div class="row">
       <div class="col-md-4 col-md-offset-8 vmodal">
         <h6>Обратный звонок</h6>
-        <form action="">
-          <input type="text" placeholder="Ваше имя">
-          <input type="text" placeholder="+7 (___)___-__-__">
-          <textarea placeholder="Коментарий"></textarea>
-          <button>ОСТАВИТЬ ЗАЯВКУ</button>
-        </form>
+        <?php echo do_shortcode( '[contact-form-7 id="174" title="contact"]' ) ?>
         <span class="close"></span>
       </div>
     </div><!-- /.row -->
