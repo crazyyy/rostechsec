@@ -296,3 +296,7 @@ jQuery(document).ready(function ($) {
       }
     });
 });
+
+jQuery(document).ready(function($) {
+  $('.header-slider').css('opacity', '1');
+});

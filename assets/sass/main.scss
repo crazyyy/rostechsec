@@ -353,7 +353,7 @@ header {
     position: relative;
 
     display: none;
-
+opacity: 0;
     padding: 0;
 
     color: #fff;
@@ -1620,7 +1620,7 @@ footer {
       img {
         position: absolute;
         top: -10px;
-        left: -50px;
+        left: -42px;
 
         width: 35px;
       }
@@ -1645,7 +1645,7 @@ footer {
         transform: translateY(-50%);
       }
       &:hover {
-        background-color: #f3f3f3;
+        background-color: darken(#f3f3f3, 5%);
       }
     }
   }
